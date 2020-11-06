@@ -1,0 +1,138 @@
+p {
+  margin: 0;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.content {
+  width: 950px;
+  margin: auto;
+  // 商品详情
+  .details {
+    font-size: 12px;
+    color: #666;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 20px 33px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 5px 14px 0 rgba(0,0,0,.1);
+    margin-top: 8px;
+    // 左边商品详细信息
+    .d-left {
+      display: block;
+      float: left;
+      padding-right: 20px;
+      .name {
+        font-size: 26px;
+        line-height: 37px;
+      }
+      .score {
+        font-size: 14px;
+        height: 14px;
+        margin: 6px 0 17px;
+        .star-cont {
+          display: inline-block;
+          height: 100%;
+          .icon {
+            position: relative;
+            overflow: hidden;
+            width: 65px;
+            i {
+              position: relative;
+              font-size: 13px;
+              color: #ff9900;
+            }
+          }
+        }
+        #scoreNumber {
+          display: inline-block;
+          height: 100%;
+        }
+      }
+      .address {
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 16px 0 11px;
+        p {
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      .tags {
+        padding-top: 20px;
+        li {
+          float: left;
+          margin-right: 16px;
+          line-height: 17px;
+          img {
+            margin: auto auto 11px;
+            width: 24px;
+            height: 24px;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    // 右边商品详情图
+    .d-right {
+      display: block;
+      float: left;
+      overflow: hidden;
+      cursor: pointer;
+      .big {
+        height: 214px;
+        width: 100%;
+        .imgbox {
+          display: block;
+          width: auto;
+          height: auto;
+          background-size: 60% auto;
+        }
+      }
+      .el-row {
+        padding-top: 10px;
+        .el-col {
+          height: 50px;
+        }
+      }
+    }
+  }
+  // 评论栏目
+  .btm-cont {
+    color: #222;
+    padding-top: 40px;
+    .comment {
+      width: 100%;
+      margin-bottom: 40px;
+      .total {
+        font-size: 20px;
+        line-height: 26px;
+        // 评论排序方式
+        .sort {
+          cursor: pointer;
+          float: right;
+          font-size: 12px;
+          color: #999;
+          span {
+            font-size: 12px;
+            margin-left: 20px;
+          }
+          .on {
+            color: #00c9b3;
+          }
+        }
+      }
+    }
+  }
+  .clear:after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+  }
+}

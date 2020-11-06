@@ -1,0 +1,87 @@
+// userTable.scss
+.user-table {
+  height: calc(100% - 62px);
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  // 分页栏目
+  .pager {
+    position: absolute;
+    width: 68%;
+    bottom: -30px;
+    right: 0px;
+  }
+}
+// 商品列表
+.courselist {
+    overflow: hidden;
+    margin-bottom: 93px;
+    li{
+      display: flex;
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 4px;
+      border-bottom: #e5e5e5 solid 1px;
+      cursor: pointer;
+      // 商品图
+      .courseposter {
+          height: 125px;
+          margin-right: 20px;
+          img{
+              width: 220px;
+              height: 100%;
+              border-radius: 5%;
+          }
+      }
+      // 商品信息
+      .information {
+        display: block;
+        width: 100%;
+        // 商品名及商家名
+        .coursetitle {
+            font-size: 16px;
+            color: #222;
+            margin-top: 5px;
+            line-height: 22px;
+            font-weight: bold;
+        }
+        // 商品评分和评论数
+        .scorecomment {
+            display: inline-flex;
+            margin-top: 5px;
+            font-size: 13px;
+            .score {
+              position: relative;
+              margin-right: 8px;
+              overflow: hidden;
+              width: 70px;
+              i {
+                position: relative;
+                font-size: 14px;
+                color: #ff9900;
+              }
+            }
+            .level {
+                width: 40px;
+                text-align: left;
+                color: #333;
+            }
+            .comment {
+                margin-left: 10px;
+                color: #ff6600;
+            }
+        }
+        // 商品价格
+        .price {
+          position: relative;
+          margin-top: 8px;
+          color: #666;
+          font-size: 12px;
+          line-height: 17px;
+        }
+      }
+    }
+    li:last-child {
+        border: none
+    }
+}

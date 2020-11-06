@@ -1,0 +1,58 @@
+header {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  background: #F8F8F8;
+  font-size: 12px;
+  color: #999;
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 950px;
+    margin: auto;
+    .l-content {
+      display: flex;
+      align-items: center;
+    }
+    .r-content {
+      display: flex;
+      align-items: center;
+      #username {
+        font-size: 20px;
+        margin-right: 8px;
+      }
+      .user {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .top {
+    display: block;
+    width: 950px;
+    padding: 0 20px;
+    margin: auto;
+    // 图标
+    #icon {
+      display: flex;
+      float: left;
+      line-height: 42px;
+      i {
+        font-size: 42px;
+        color: rgb(0, 141, 225);
+      }
+      span {
+        margin-left: 10px;
+        font-size: 36px;
+      }
+    }
+    // 搜索框
+    .search-body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-right: 110px;
+    }
+  }
+}
