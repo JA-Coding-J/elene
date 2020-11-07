@@ -20,5 +20,17 @@ yarn build
 yarn lint
 ```
 
+### Login
+## Login to manage system
+```
+username: admin
+password: 123456
+```
+## Login to user home
+```
+username: user
+password: 123456
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
