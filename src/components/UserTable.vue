@@ -14,13 +14,7 @@
             <p class="coursetitle">{{ item.name }}&nbsp;({{ item.merchant }})</p>
             <!-- 商品评分和评论数 -->
             <div class="scorecomment">
-              <p class="score" :style="{right: distance(item.score)}">
-                <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-                <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-                <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-                <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-                <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              </p>
+              <score-item :score="item.score" :em="1"></score-item>
               <p class="level">
                 {{ item.score }}分
               </p>
@@ -45,7 +39,11 @@
 </template>
 
 <script>
+import ScoreItem from './ScoreItem'
 export default {
+  components: {
+    ScoreItem
+  },
   props: {
     tableData: Array,
     config: Object
@@ -61,10 +59,6 @@ export default {
       this.$store.commit('setValue', item)
       this.$router.push({ path: '/goodDetail/:id', params: { id: item.id }})
       this.$store.commit('selectMenu', this.$store.state.tab.menu[1])
-    },
-    distance(score) {
-      const dis = 70 - score * 14 + 'px'
-      return dis
     }
   }
 }

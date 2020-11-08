@@ -16,13 +16,7 @@
           </div>
           <!-- 评分 -->
           <div class="source">
-            <p class="score" :style="{right: distance(item.score)}">
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-            </p>
+            <score-item :score="item.score" :em="1"></score-item>
           </div>
           <!-- 评论 -->
           <div class="desc">{{ item.comment }}</div>
@@ -41,15 +35,13 @@
 </template>
 
 <script>
+import ScoreItem from './ScoreItem'
 export default {
+  components: {
+    ScoreItem
+  },
   props: {
     commentDetail: Array
-  },
-  methods: {
-    distance(score) {
-      const dis = 70 - score * 14 + 'px'
-      return dis
-    }
   }
 }
 </script>

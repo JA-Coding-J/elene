@@ -50,19 +50,8 @@
             display: inline-flex;
             margin-top: 5px;
             font-size: 13px;
-            .score {
-              position: relative;
-              margin-right: 8px;
-              overflow: hidden;
-              width: 70px;
-              i {
-                position: relative;
-                font-size: 14px;
-                color: #ff9900;
-              }
-            }
             .level {
-                width: 40px;
+                width: 3em;
                 text-align: left;
                 color: #333;
             }

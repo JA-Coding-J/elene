@@ -9,13 +9,7 @@
         </div>
         <div class="score clear">
           <div class="star-cont">
-            <p class="icon" :style="{right: distance(item.score)}">
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-              <i :class="'el-icon-star-on'" :style="{left: distance(item.score)}" />
-            </p>
+            <score-item :score="item.score" :em="1"></score-item>
           </div>
           <div id="scoreNumber">{{ item.score }}分
             <span>人均￥{{ item.price }}</span>
@@ -75,9 +69,11 @@
 
 <script>
 import GoodComment from '../../components/GoodComment'
+import ScoreItem from '../../components/ScoreItem'
 export default {
   components: {
-    GoodComment
+    GoodComment,
+    ScoreItem
   },
   data() {
     return {
