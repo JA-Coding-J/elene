@@ -1,18 +1,8 @@
 <template>
   <div class="container">
     <!-- 轮播图 -->
-    <div class="slide" style="padding-top: 5px;">
-      <!-- 取vuex中的列表数据前六条的商品图作为轮播图图片 -->
-      <div v-for="(item, index) in tableData.slice(0, 6)" v-show="index === mark" :key="index" class="slideshow">
-        <a href="#">
-          <img :src="item.img" style="width:100%;height:350px;">
-        </a>
-      </div>
-      <!-- 轮播图下方小点 -->
-      <div class="bar">
-        <span v-for="(item, index) in tableData.slice(0, 6)" :key="index" :class="{ 'active':index === mark }" />
-      </div>
-    </div>
+    <!-- 取vuex中的列表数据前六条的商品图作为轮播图图片 -->
+    <view-pager :pages=viewPages class="slide"/>
     <!-- 分类 -->
     <div class="filter">
       <div class="condition">
@@ -68,14 +58,14 @@
 
 <script>
 import UserTable from '../../components/UserTable'
+import ViewPager from '../../components/ViewPager'
 export default {
   components: {
-    UserTable
+    UserTable,
+    ViewPager
   },
   data() {
     return {
-      // 轮播图计数
-      mark: 0,
       // 分类:
       classifies: [
         '代金券',
@@ -132,6 +122,7 @@ export default {
       ],
       // UserTable.vue
       tableData: [],
+      viewPages: [],
       config: {
         page: 1,
         total: 30,
@@ -141,10 +132,6 @@ export default {
   },
   created() {
     this.getList()
-    this.play()
-  },
-  mounted() {
-    this.play
   },
   methods: {
     getList() {
@@ -161,22 +148,14 @@ export default {
           this.tableData = res.data.list.map(item => {
             return item
           })
+          // 获取轮播图图片
+          const data = this.tableData.slice(0, 6)
+          this.viewPages = data.map(item => {
+            return item.img
+          })
           this.config.total = res.data.count
           this.config.loading = false
         })
-    },
-    // 轮播图
-    autoPlay() {
-      this.mark++
-      if (this.mark === 3) { // 当遍历到最后一张图片置零
-        this.mark = 0
-      }
-    },
-    play() {
-      setInterval(this.autoPlay, 4000)
-    },
-    change(i) {
-      this.mark = i
     }
   }
 }

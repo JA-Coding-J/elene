@@ -17,15 +17,11 @@ export default {
     score: {
       value: 5,
       type: Number
-    },
-    em: {
-      value: 1,
-      type: Number
     }
   },
   computed: {
     distance() {
-      return 6 - this.score + 'em'
+      return 5.5 - this.score + 'em'
     }
   }
 }
@@ -36,7 +32,7 @@ export default {
   position: relative;
   margin-right: 8px;
   overflow: hidden;
-  width: 6em;
+  width: 5.5em;
   p {
     position: relative;
   }
