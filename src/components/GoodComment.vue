@@ -16,7 +16,7 @@
           </div>
           <!-- 评分 -->
           <div class="source">
-            <score-item :score="item.score" :em="1"></score-item>
+            <score-item :score="item.score" :em="1" />
           </div>
           <!-- 评论 -->
           <div class="desc">{{ item.comment }}</div>

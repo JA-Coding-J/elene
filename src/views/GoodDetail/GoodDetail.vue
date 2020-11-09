@@ -9,7 +9,7 @@
         </div>
         <div class="score clear">
           <div class="star-cont">
-            <score-item :score="item.score" :em="1"></score-item>
+            <score-item :score="item.score" :em="1" />
           </div>
           <div id="scoreNumber">{{ item.score }}分
             <span>人均￥{{ item.price }}</span>
